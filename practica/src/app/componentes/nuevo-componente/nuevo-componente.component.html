@@ -1,0 +1,29 @@
+<div *ngFor="let practica of practicaFinal">
+    <div>
+        <div>
+            {{ practica.links.self }}
+        </div>
+        <div>
+            {{ practica.links.next }}
+        </div>
+        <div>
+            {{ practica.links.last }}
+        </div>
+    </div>
+
+    <div *ngFor="let da of practica.data">
+        <div>
+            {{ da.attributes.title }}
+        </div>
+        <div>
+            {{ da.relationships.author.links.self }}
+        </div>
+        <div>
+            {{ da.relationships.author.data.type }}
+        </div>
+
+        <div *ngFor="let x of da.relationships.comments.data">
+            {{ x.type }}
+        </div>
+    </div>
+</div>
